@@ -1,0 +1,15 @@
+conda create -n yolov5 python=3.8
+conda activate yolov5
+conda install pytorch torchvision cudatoolkit=10.1
+pip install -r requirements.txt
+
+python detect.py --source 0 --weights="weights/yolov5x.pt"
+
+准备数据集
+修改coco128.yaml
+修改yolov5x.yaml
+下载权重：https://github.com/ultralytics/yolov5/releases/tag/v1.0
+
+python train.py --img 640 --data data/coco128.yaml --cfg models/yolov5x.yaml --weights weights/yolov5x.pt --workers 0 --batch-size 4 --epochs 100 
+python train.py --img 640 --data data/coco128.yaml --cfg models/yolov5s.yaml --weights weights/yolov5s.pt --workers 0 --batch-size 16 --epochs 100 
+python detect.py --source .mp4 --weights="runs/exp7/weights/best.pt" --view-video --conf-thres 0.3
