@@ -1,4 +1,4 @@
-# Deep-Learning
+# Deep-Learning课设
 # Deep-Learning
 
 # 背景
@@ -22,3 +22,12 @@
 ![图片](https://user-images.githubusercontent.com/75561983/119947375-3fd2a300-bfca-11eb-898c-397c1d69382f.png)
 
 
+# 总结：
+
+## 测试不够精准的原因分析
+
+1.由于数据集太小，导致模型有很多车没见过。
+
+2.由于threshold设置的过高，导致检测不够准确。
+
+3.Yolov5s网络最小，速度最快，AP精度也最低。可以选择精度更高的Yolov5x
